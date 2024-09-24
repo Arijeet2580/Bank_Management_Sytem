@@ -6,7 +6,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class Login extends JFrame implements ActionListener {
-    JLabel title,cardNo,pin;
+    JLabel title,cardNo,pass;
     JTextField cardTf;
     JPasswordField passTf;
     JButton signIn,clear,signUp;
@@ -29,10 +29,10 @@ public class Login extends JFrame implements ActionListener {
         cardTf.setFont(new Font("Arial", Font.BOLD, 20));
         add(cardTf);
         //Password Section
-        pin = new JLabel("PIN:");
-        pin.setFont(new Font("Times New Roman", Font.BOLD, 20));
-        pin.setBounds(130,220,375,30);
-        add(pin);
+        pass = new JLabel("pass:");
+        pass.setFont(new Font("Times New Roman", Font.BOLD, 20));
+        pass.setBounds(130,220,375,30);
+        add(pass);
 
         passTf = new JPasswordField(15);
         passTf.setFont(new Font("Arial", Font.BOLD, 14));
@@ -85,15 +85,15 @@ public class Login extends JFrame implements ActionListener {
             if(ae.getSource()==signIn){
                 Conn c1 = new Conn();
                 String cardno  = cardTf.getText();
-                String pin  = passTf.getText();
-                String q  = "select * from login where cardno = '"+cardno+"' and pin = '"+pin+"'";
+                String pass  = passTf.getText();
+                String q  = "select * from login where cardno = '"+cardno+"' and pass = '"+pass+"'";
 
                 ResultSet rs = c1.s.executeQuery(q);
                 if(rs.next()){
                     setVisible(false);
-                    new Transactions(pin).setVisible(true);
+                    new Transactions(pass).setVisible(true);
                 }else{
-                    JOptionPane.showMessageDialog(null, "Incorrect Card Number or PIN");
+                    JOptionPane.showMessageDialog(null, "Incorrect Card Number or pass");
                 }
             }*/
             if(ae.getSource()==clear){
