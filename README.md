@@ -1,7 +1,3 @@
-Here’s a comprehensive and user-friendly README for your **Bank Management System** project:
-
----
-
 # Bank Management System
 
 A feature-rich Bank Management System developed in **Core Java** to simplify and automate banking operations. This project provides a user-friendly interface for managing customer accounts, performing transactions, and maintaining essential banking records efficiently.
